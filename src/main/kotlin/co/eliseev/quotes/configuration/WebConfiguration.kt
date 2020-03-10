@@ -12,14 +12,7 @@ class WebConfiguration : WebMvcConfigurer {
     override fun addCorsMappings(registry: CorsRegistry) {
         registry.addMapping("/**")
             .allowedOrigins(CorsConfiguration.ALL)
-            .allowedMethods(HttpMethod.HEAD.name)
-            .allowedMethods(HttpMethod.DELETE.name)
-            .allowedMethods(HttpMethod.GET.name)
-            .allowedMethods(HttpMethod.PATCH.name)
-            .allowedMethods(HttpMethod.POST.name)
-            .allowedMethods(HttpMethod.PUT.name)
-            .allowedMethods(HttpMethod.OPTIONS.name)
-            .allowedMethods(HttpMethod.TRACE.name)
+            .allowedMethods(*HttpMethod.values().map { it.name }.toTypedArray())
     }
 
 }
