@@ -1,0 +1,14 @@
+CREATE TABLE elvls(
+    isin CHAR(12) NOT NULL PRIMARY KEY,
+    value DECIMAL NOT NULL
+);
+
+
+CREATE TABLE quotes(
+    id BIGINT DEFAULT -1 AUTO_INCREMENT PRIMARY KEY,
+    isin CHAR(12) NOT NULL,
+    bid DECIMAL,
+    ask DECIMAL NOT NULL,
+    bidSize DECIMAL,
+    askSize DECIMAL
+);
